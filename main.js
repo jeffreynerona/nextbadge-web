@@ -20,7 +20,7 @@ function login(event) {
         	}
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert("Some serious error");
+            alert(XMLHttpRequest);
         }
     }); 
 }
