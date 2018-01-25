@@ -20,7 +20,8 @@ function login(event) {
         	}
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert(XMLHttpRequest);
+            alert(XMLHttpRequest.toSource());
+            alert(JSON.stringify(XMLHttpRequest, null, 4));
         }
     }); 
 }
