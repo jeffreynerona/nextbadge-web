@@ -28,3 +28,10 @@ video#preview {
 	width: 100%;
 	max-width: 400px;
 }
+
+#scanbutton {
+	display: block;
+	margin: auto;
+	width: 100%;
+	max-width: 400px;
+}
