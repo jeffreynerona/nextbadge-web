@@ -28,13 +28,24 @@
         <hr class="my-4">
         <p>Login or Register to Use the App</p>
         <p class="lead">
-          <a class="btn btn-primary btn-lg" href="login.html" role="button">Login</a>
+          <a class="btn btn-primary btn-lg" href="host.html" role="button">Host</a>
+          <button class="btn btn-primary btn-lg" onclick="scanqr();">Scan</button>
           <button class="btn btn-primary btn-lg" href="#" onclick="logout();" role="button">Logout</button>
         </p>
       </div>
       </div>
-  </div>
-
+    </div>
+    <div class="h-100 w-100" id="qrmodal">
+      <div class="d-flex h-100">
+          <div style="margin:auto;" class="row justify-content-center align-self-center w-100">
+          <video id="preview"></video>
+          <button id="closeqr" class="btn btn-primary" onclick="closeqr();">Cancel</button>
+          </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $('#qrmodal').hide();
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="popper.min.js"></script>

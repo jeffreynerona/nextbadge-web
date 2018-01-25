@@ -13,7 +13,7 @@ function login(event) {
         success: function (response) {
         	if(response.success) {
         		localStorage.setItem('nbtoken', response.token);
-        		window.location("member.html")
+        		window.location = "member.html";
         	} else {
             alert(response.message.toString());
         	}
