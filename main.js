@@ -15,11 +15,12 @@ function login(event) {
         		localStorage.setItem('nbtoken', response.token);
         		window.location = "member.html";
         	} else {
-            alert(response.message.toString());
+        		localStorage.removeItem("nbtoken");
+            alert("Error Loggin In");
         	}
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert(errorThrown);
+            alert("Some serious error");
         }
     }); 
 }
