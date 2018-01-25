@@ -2,3 +2,29 @@ html, body {
 	height: 100%;
 	min-height: 100%;
 }
+
+
+video#preview {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#qrmodal {
+	height: 100%;
+	width: 100%;
+	background: black;
+	position: absolute;
+	z-index: 99;
+	top:0;
+}
+
+#closeqr {
+	position: fixed;
+	bottom:20px;
+	display: block;
+	margin: auto;
+	width: 100%;
+	max-width: 400px;
+}

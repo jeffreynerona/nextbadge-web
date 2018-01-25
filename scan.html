@@ -9,41 +9,36 @@
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="instascan.min.js"></script>
-    <script src="jquery-3.2.1.slim.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="main.js"></script>
     <title>Next Badge</title>
   </head>
   <body>
     <div class="container d-flex h-100">
-      <div class="row justify-content-center align-self-center">
-       <video id="preview"></video>
-        <script type="text/javascript">
-          var mirrorOn = true;
-          if($(document).width() <= 1000) {
-            mirrorOn = false;
-          }
-          let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: mirrorOn });
-          scanner.addListener('scan', function (content) {
-            alert(content);
-          });
-          Instascan.Camera.getCameras().then(function (cameras) {
-            if (cameras.length > 1) {
-              scanner.start(cameras[2]);
-            }
-            else if (cameras.length > 0) {
-              scanner.start(cameras[0]);
-            } else {
-              console.error('No cameras found.');
-            }
-          }).catch(function (e) {
-            console.error(e);
-          });
-        </script>
+      <div class="row justify-content-center align-self-center w-100">
+       <h1>Welcome!</h1>
+       <button class="btn btn-primary" onclick="scanqr();">Scan</button>
       </div>
+  </div>
+
+  <div class="h-100 w-100" id="qrmodal">
+    <div class="d-flex h-100">
+        <div class="row justify-content-center align-self-center w-100">
+        <video id="preview"></video>
+        <button id="closeqr" class="btn btn-primary" onclick="closeqr();">Cancel</button>
+        </div>
+    </div>
   </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="popper.min.js"></script>
     <script src="bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $('#qrmodal').hide();
+    </script>
   </body>
 </html>

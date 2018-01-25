@@ -19,16 +19,22 @@
   <body>
     <div class="container d-flex h-100">
       <div class="row justify-content-center align-self-center">
-       <div class="jumbotron">
-        <h1 class="display-4">Welcome to NextBadge</h1>
-        <p class="lead">This is a prototype for NextBadge. NextBadge allows easy event management by giving attendees easy login options.</p>
-        <hr class="my-4">
-        <p>Login or Register to Use the App</p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" href="login.html" role="button">Login</a>
-          <a class="btn btn-primary btn-lg" href="register.html" role="button">Register</a>
-        </p>
-      </div>
+        <div class="col-md-6">
+            <form>
+              <h1>Login or scan QR code</h1>
+              <div class="form-group">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+            
+              <button type="submit" class="btn btn-primary" onclick="loginToHost(event);">Login</button>
+            </form>  
+        </div>
+        <div class="col-md-6">
+          <img class="img-fluid" id="qrcode">
+        </div>
       </div>
   </div>
 
@@ -36,5 +42,8 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="popper.min.js"></script>
     <script src="bootstrap.min.js"></script>
+    <script type="text/javascript">
+      getqr("jefftest");
+    </script>
   </body>
 </html>
