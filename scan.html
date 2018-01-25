@@ -21,7 +21,7 @@
           if($(document).width() <= 1000) {
             isMobile = true;
           }
-          let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
+          let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: isMobile });
           scanner.addListener('scan', function (content) {
             alert(content);
           });
