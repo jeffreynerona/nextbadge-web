@@ -17,11 +17,11 @@
       <div class="row justify-content-center align-self-center">
        <video id="preview"></video>
         <script type="text/javascript">
-          var isMobile = false;
+          var mirrorOn = true;
           if($(document).width() <= 1000) {
-            isMobile = true;
+            mirrorOn = false;
           }
-          let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: isMobile });
+          let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: mirrorOn });
           scanner.addListener('scan', function (content) {
             alert(content);
           });
