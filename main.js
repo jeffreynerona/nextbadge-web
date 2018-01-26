@@ -6,7 +6,7 @@ function login(event) {
 	var email = document.getElementById("exampleInputEmail1").value;
 	var pass = document.getElementById("exampleInputPassword1").value;
 	$.ajax({
-        url: 'http://api.luciron.com:3005/v1/user/login',
+        url: 'https://api.luciron.com/v1/user/login',
         type: 'POST',
         data: JSON.stringify({ email: email, password : pass}) ,
         contentType: 'application/json; charset=utf-8',
@@ -30,7 +30,7 @@ function register() {
 	var email = document.getElementById("exampleInputEmail1").value;
 	var pass = document.getElementById("exampleInputPassword1").value;
 	$.ajax({
-        url: 'http://api.luciron.com:3005/v1/user/register',
+        url: 'https://api.luciron.com/v1/user/register',
         type: 'POST',
         data: JSON.stringify({ fullname: name, email: email, password : pass}) ,
         contentType: 'application/json; charset=utf-8',
@@ -69,7 +69,7 @@ function auth(token) {
 	//   },
 	//   beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + token )}
 	// });
-	axios.get('http://api.luciron.com:3005/v1/user/me', {
+	axios.get('https://api.luciron.com/v1/user/me', {
   headers: {
     'Authorization': 'Bearer ' + token,
   },
@@ -93,7 +93,7 @@ function notLogged() {
 		logout();
 	} else {
 		console.log("has token")
-		axios.get('http://api.luciron.com:3005/v1/user/me', {
+		axios.get('https://api.luciron.com/v1/user/me', {
 	  headers: {
 	    'Authorization': 'Bearer ' + localStorage.getItem("nbtoken"),
 	  },
